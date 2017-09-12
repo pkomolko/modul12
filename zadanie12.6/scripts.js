@@ -16,5 +16,11 @@ function searchCountries() {
 };
 
 function showCountriesList(resp) {
-  countriesList.empty();
-}
+	console.log(resp);
+  	countriesList.empty();
+   	resp.forEach(function(item){
+   	$('<li class=" nazwa ">').text("nazwa : " + item.name).appendTo(countriesList);
+	$('<li>').text(item.population).appendTo(countriesList);
+   	$('<li>').text(item.capital).appendTo(countriesList);
+});	
+};
